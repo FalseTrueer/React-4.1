@@ -1,0 +1,19 @@
+.fieldUl{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+
+
+}
+
+.fieldLi{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid black;
+}
+
+.fieldLi button{
+	padding: 25px 50px;
+}
+
