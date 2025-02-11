@@ -20,6 +20,37 @@ export function Field({
 	setIsDraw,
 	setCurrentPlayer,
 }) {
+	function checkWin(field, curPlayer) {
+		return WIN_PATTERNS.some((pattern) => {
+			const [a, b, c] = pattern;
+			return (
+				field[a] === curPlayer && field[b] === curPlayer && field[c] === curPlayer
+			);
+		});
+	}
+
+	function buttonClick(ind) {
+		if (field[ind] || isGameEnded) {
+			return;
+		}
+
+		const newField = [...field];
+		newField[ind] = currentPlayer;
+		setField(newField);
+
+		if (checkWin(newField, currentPlayer)) {
+			setIsGameEnded(true);
+			return;
+		}
+
+		if (!newField.includes('')) {
+			setIsDraw(true);
+			return;
+		}
+
+		setCurrentPlayer(currentPlayer === 'X' ? 'O' : 'X');
+	}
+
 	return (
 		<FieldLayout
 			field={field}
@@ -29,7 +60,8 @@ export function Field({
 			setIsGameEnded={setIsGameEnded}
 			setIsDraw={setIsDraw}
 			setCurrentPlayer={setCurrentPlayer}
-			winPatterns={WIN_PATTERNS}
+			checkWin={checkWin}
+			buttonClick={buttonClick}
 		/>
 	);
 }

@@ -12,13 +12,8 @@ export function GameLayout({
 	setIsGameEnded,
 	setIsDraw,
 	setCurrentPlayer,
+	handleClick
 }) {
-	function handleClick() {
-		setField(Array(9).fill(''));
-		setIsGameEnded(false);
-		setIsDraw(false);
-		setCurrentPlayer('X');
-	}
 
 	return (
 		<div className={styles.gameField}>
@@ -52,4 +47,5 @@ GameLayout.propTypes = {
 	setIsGameEnded: PropTypes.func.isRequired,
 	setIsDraw: PropTypes.func.isRequired,
 	setCurrentPlayer: PropTypes.func.isRequired,
+	handleClick: PropTypes.func.isRequired,
 };

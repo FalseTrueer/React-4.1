@@ -7,6 +7,13 @@ export function Game() {
 	const [isDraw, setIsDraw] = useState(false);
 	const [field, setField] = useState(Array(9).fill(''));
 
+	function handleClick() {
+		setField(Array(9).fill(''));
+		setIsGameEnded(false);
+		setIsDraw(false);
+		setCurrentPlayer('X');
+	}
+
 	const gameProps = {
 		currentPlayer,
 		isGameEnded,
@@ -16,6 +23,7 @@ export function Game() {
 		setIsGameEnded,
 		setIsDraw,
 		setCurrentPlayer,
+		handleClick
 	};
 
 	return <GameLayout {...gameProps} />;

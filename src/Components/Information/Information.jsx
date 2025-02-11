@@ -6,6 +6,6 @@ export function Information({ isDraw, isGameEnded, currentPlayer }) {
 			isDraw={isDraw}
 			isGameEnded={isGameEnded}
 			currentPlayer={currentPlayer}
-		></InformationLayout>
+		/>
 	);
 }
