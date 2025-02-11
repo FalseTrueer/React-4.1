@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { FieldLayout } from './FieldLayout';
 
 const WIN_PATTERNS = [
@@ -31,6 +30,6 @@ export function Field({
 			setIsDraw={setIsDraw}
 			setCurrentPlayer={setCurrentPlayer}
 			winPatterns={WIN_PATTERNS}
-		></FieldLayout>
+		/>
 	);
 }

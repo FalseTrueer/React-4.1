@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import styles from './Field.module.css';
 import PropTypes from 'prop-types';
 
@@ -45,24 +44,22 @@ export function FieldLayout({
 
 	return (
 		<ul className={styles.fieldUl}>
-			{field.map((el, ind) => {
-				return (
-					<li key={ind} className={styles.fieldLi}>
-						<button onClick={() => buttonClick(ind)}>{el}</button>
-					</li>
-				);
-			})}
+			{field.map((el, ind) => (
+				<li key={ind} className={styles.fieldLi}>
+					<button onClick={() => buttonClick(ind)}>{el}</button>
+				</li>
+			))}
 		</ul>
 	);
 }
 
-FieldLayout.PropTypes = {
-	field: PropTypes.array,
-	isGameEnded: PropTypes.bool,
-	currentPlayer: PropTypes.string,
-	setField: PropTypes.func,
-	setIsGameEnded: PropTypes.func,
-	setIsDraw: PropTypes.func,
-	setCurrentPlayer: PropTypes.func,
-	winPatterns: PropTypes.array,
+FieldLayout.propTypes = {
+	field: PropTypes.arrayOf(PropTypes.string).isRequired,
+	isGameEnded: PropTypes.bool.isRequired,
+	currentPlayer: PropTypes.string.isRequired,
+	setField: PropTypes.func.isRequired,
+	setIsGameEnded: PropTypes.func.isRequired,
+	setIsDraw: PropTypes.func.isRequired,
+	setCurrentPlayer: PropTypes.func.isRequired,
+	winPatterns: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)).isRequired,
 };

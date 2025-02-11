@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { GameLayout } from './GameLayout';
 
 export function Game() {
@@ -18,5 +18,5 @@ export function Game() {
 		setCurrentPlayer,
 	};
 
-	return <GameLayout {...gameProps}></GameLayout>;
+	return <GameLayout {...gameProps} />;
 }

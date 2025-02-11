@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import styles from './Information.module.css';
 import PropTypes from 'prop-types';
 
@@ -14,8 +13,8 @@ export function InformationLayout({ isDraw, isGameEnded, currentPlayer }) {
 	);
 }
 
-InformationLayout.PropTypes = {
-	isDraw: PropTypes.bool,
-	isGameEnded: PropTypes.bool,
-	currentPlayer: PropTypes.string,
+InformationLayout.propTypes = {
+	isDraw: PropTypes.bool.isRequired,
+	isGameEnded: PropTypes.bool.isRequired,
+	currentPlayer: PropTypes.string.isRequired,
 };

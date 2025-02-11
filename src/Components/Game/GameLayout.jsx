@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { Field } from '../Field/Field';
 import { Information } from '../Information/Information';
 import styles from './Game.module.css';
@@ -27,7 +26,7 @@ export function GameLayout({
 				isDraw={isDraw}
 				isGameEnded={isGameEnded}
 				currentPlayer={currentPlayer}
-			></Information>
+			/>
 			<Field
 				field={field}
 				isGameEnded={isGameEnded}
@@ -36,7 +35,7 @@ export function GameLayout({
 				setIsGameEnded={setIsGameEnded}
 				setIsDraw={setIsDraw}
 				setCurrentPlayer={setCurrentPlayer}
-			></Field>
+			/>
 			<button className={styles.resetButton} onClick={handleClick}>
 				Начать заново
 			</button>
@@ -44,13 +43,13 @@ export function GameLayout({
 	);
 }
 
-GameLayout.PropTypes = {
-	currentPlayer: PropTypes.string,
-	isGameEnded: PropTypes.bool,
-	isDraw: PropTypes.bool,
-	field: PropTypes.array,
-	setField: PropTypes.func,
-	setIsGameEnded: PropTypes.func,
-	setIsDraw: PropTypes.func,
-	setCurrentPlayer: PropTypes.func,
+GameLayout.propTypes = {
+	currentPlayer: PropTypes.string.isRequired,
+	isGameEnded: PropTypes.bool.isRequired,
+	isDraw: PropTypes.bool.isRequired,
+	field: PropTypes.arrayOf(PropTypes.string).isRequired,
+	setField: PropTypes.func.isRequired,
+	setIsGameEnded: PropTypes.func.isRequired,
+	setIsDraw: PropTypes.func.isRequired,
+	setCurrentPlayer: PropTypes.func.isRequired,
 };
